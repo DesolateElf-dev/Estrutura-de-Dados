@@ -13,8 +13,37 @@ demais dados serão digitados pelo usuário
 public class Ex05 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		
+		int matriz[][] = new int[4][4];
+		
+		for(int i=0;i<4;i++) {
+			for(int j=0;j<4;j++) {
+				if(i==j) {
+					matriz[i][j]=(int) Math.pow(3, i);
+				}
+			}
+		}
+		geraValor(matriz);
+		printaMatriz(matriz);		
 	}
-
+	
+	private static void geraValor(int[][] matriz) {
+		for (int i=0;i<4;i++) {
+			for (int j=0;j<4;j++) {
+				if(i!=j) {
+					int numero = (int)(Math.random()*30);
+					matriz[i][j] = numero;
+				}
+			}
+		}
+	}
+	
+	private static void printaMatriz(int[][] matriz) {
+		for (int i=0;i<4;i++) {
+			System.out.println("");
+			for (int j=0;j<4;j++) {
+				System.out.print(" "+matriz[i][j]);
+			}
+		}
+	}
 }
